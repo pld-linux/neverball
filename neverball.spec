@@ -2,13 +2,12 @@
 # TODO:
 #  - correct home_etc
 #  - put highscores files in proper place
-#  - check desktop file
 #
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
 Version:	1.1.0
-Release:	0.2
+Release:	0.3
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
@@ -27,7 +26,6 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-#%%define		_bindir		%{_prefix}/games
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
 
 %description
@@ -51,14 +49,14 @@ up³ywem czasu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/games/%{name}} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}} \
 	$RPM_BUILD_ROOT%{_desktopdir}
 
 install neverball $RPM_BUILD_ROOT%{_bindir}
-cp -R data/* $RPM_BUILD_ROOT%{_datadir}/games/%{name}
+cp -R data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
-rm -f $RPM_BUILD_ROOT%{_datadir}/games/%{name}/Makefile*
+rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/Makefile*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -68,5 +66,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README MAPPING CHANGES
 #%%attr(2755,root,games) %{_bindir}/neverball
 %attr(755,root,root) %{_bindir}/neverball
-%{_datadir}/games/%{name}
+%{_datadir}/%{name}
 %{_desktopdir}/*
