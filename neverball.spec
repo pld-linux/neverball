@@ -1,9 +1,14 @@
-
+#
+# TODO:
+#  - correct home_etc
+#  - put highscores files in proper place
+#  - check desktop file
+#
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
 Version:	1.1.0
-Release:	0.1
+Release:	0.2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
