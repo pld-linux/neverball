@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=neverball
+Comment=3d game with rolling the ball
+Comment[pl]=Gra 3d polegająca na toczeniu kulki 
+Exec=neverball
+Terminal=0
+Type=Application
+# vi: encoding=utf-8
