@@ -1,0 +1,11 @@
+--- neverball/src/config.h.fix	2003-08-10 12:07:28.000000000 +0200
++++ neverball/src/config.h	2003-08-05 19:02:44.000000000 +0200
+@@ -15,7 +15,7 @@
+  *
+  * If the game is to be installed globally, change this value.
+  */
+-#define CONFIG_PATH "/usr/share/games/neverball"
++#define CONFIG_PATH "./data"
+ 
+ /*
+  * Global settings are stored in  CONFIG_FILE.  This file is placed in
