@@ -1,9 +1,9 @@
 #
-# TODO: summary, description (check), cleanups, check BRs
+# TODO: check BRs
 #       add .desktop
 #
-Summary:	Neverball is 3d game with rolling the ball
-Summary(pl):	Neverball jest gr± 3d polegaj±c± na toczeniu kulki
+Summary:	Neverball - 3D game with rolling the ball
+Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
 Version:	0805b
 Release:	0.3
@@ -29,7 +29,7 @@ Tilt the floor to roll the ball through the obstacle course before
 time runs out.
 
 %description -l pl
-Przechylaj stó³ aby przetoczyæ kulkê przez tor z przeszkodami przed
+Przechylaj stó³, aby przetoczyæ kulkê przez tor z przeszkodami przed
 up³ywem czasu.
 
 %prep
