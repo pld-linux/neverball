@@ -6,15 +6,16 @@
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
-Version:	1.3.7
+Version:	1.4.0
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://icculus.org/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	b7c0fe079ab88b63b77dd3e3f06819e8
+# Source0-md5:	2ea124706cf290027b44fc23f48f3096
 Source1:	%{name}.desktop
-Source2:	%{name}.png
+Source2:	neverputt.desktop
+Source3:	%{name}.png
 Patch0:		%{name}-datadir.patch
 URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
@@ -30,11 +31,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Tilt the floor to roll the ball through the obstacle course before
-time runs out.
+time runs out. Neverball is part puzzle game, part action game, and
+entirely a test of skill.
+
+Also found here is Neverputt, a hot-seat multiplayer miniature golf
+game using the physics and graphics of Neverball.
 
 %description -l pl
-Przechylaj stó³, aby przetoczyæ kulkê przez tor z przeszkodami przed
-up³ywem czasu.
+Gra polega na przechylaniu sto³u, aby przetoczyæ kulkê przez tor
+z przeszkodami przed up³ywem czasu. Neverball jest czê¶ciowo gr±
+logiczn±, czê¶ciowo zrêczno¶ciow± i w ca³o¶ci jest sprawdzianem
+umiejêtno¶ci.
+
+Za³±czony jest równie¿ Neverputt, miniaturowy golf dla wielu graczy
+siedz±cych przy jednym komputerze u¿ywaj±cy fizyki i grafiki
+Neverballa.
 
 %prep
 %setup -q
@@ -50,10 +61,10 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT%{_desktopdir}
 
-install neverball $RPM_BUILD_ROOT%{_bindir}
+install never{ball,putt} $RPM_BUILD_ROOT%{_bindir}
 cp -R data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/Makefile*
 
@@ -63,8 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README CHANGES
-#%%attr(2755,root,games) %{_bindir}/neverball
-%attr(755,root,root) %{_bindir}/neverball
+%attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_desktopdir}/%{name}.desktop
+%{_desktopdir}/*
 %{_pixmapsdir}/*
