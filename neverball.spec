@@ -37,10 +37,13 @@ nastêpnego, trudniejszego, toru. Chyba ¿e skoñczy siê czas.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
+%patch0 -p1 -R
 
 %build
-%{__make} X11_LIBS="-L/usr/X11R6/lib -lGLU -lGL -lm"
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -ansi `sdl-config --cflags`" \
+	X11_LIBS="-L/usr/X11R6/lib -lGLU -lGL -lm"
 
 %install
 rm -rf $RPM_BUILD_ROOT
