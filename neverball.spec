@@ -2,16 +2,19 @@
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
-Version:	0805b
-Release:	1
+Version:	1.1.0
+Release:	0.1
+Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://aoeu.snth.net/neverball/%{name}-%{version}.zip
-# Source0-md5:	4638fbdeb8b672b974ab57cc84b54bd4
+Source0:	http://icculus.org/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5:	5d1b71a3779ab0072e87671f59fa8ea8
 Source1:	%{name}.desktop
 Patch0:		%{name}-datadir.patch
-URL:		http://aoeu.snth.net/
+Patch1:		%{name}-home_etc.patch
+URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
+BuildRequires:	home-etc-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
@@ -19,7 +22,7 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_bindir		%{_prefix}/games
+#%%define		_bindir		%{_prefix}/games
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
 
 %description
@@ -31,14 +34,15 @@ Przechylaj stó³, aby przetoczyæ kulkê przez tor z przeszkodami przed
 up³ywem czasu.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags} -ansi `sdl-config --cflags`" \
-	X11_LIBS="-L/usr/X11R6/lib -lGLU -lGL -lm"
+	OGL_LIBS="-L/usr/X11R6/lib -lGLU -lGL -lm"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -56,7 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.txt MAPPING.txt
-%attr(2755,root,games) %{_bindir}/neverball
+%doc README MAPPING CHANGES
+#%%attr(2755,root,games) %{_bindir}/neverball
+%attr(755,root,root) %{_bindir}/neverball
 %{_datadir}/games/%{name}
 %{_desktopdir}/*
