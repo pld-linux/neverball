@@ -5,4 +5,5 @@ Comment[pl]=Gra 3d polegająca na toczeniu kulki
 Exec=neverball
 Terminal=0
 Type=Application
+Categories=Qt;KDE;Game;ArcadeGame
 # vi: encoding=utf-8
