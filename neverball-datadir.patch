@@ -4,8 +4,8 @@
   *
   * If the game is to be installed globally, change this value.
   */
--#define CONFIG_PATH "/usr/share/games/neverball"
-+#define CONFIG_PATH "./data"
+-#define CONFIG_PATH "./data"
++#define CONFIG_PATH "/usr/share/games/neverball"
  
  /*
   * Global settings are stored in  CONFIG_FILE.  This file is placed in
