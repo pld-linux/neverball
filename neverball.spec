@@ -7,13 +7,14 @@ Summary:	Neverball - 3D game with rolling the ball
 Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
 Version:	1.2.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://icculus.org/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	c737250fec733c243355d6ac5e02f5b3
 Source1:	%{name}.desktop
+Source2:        %{name}.xpm
 Patch0:		%{name}-home_etc-datadir.patch
 URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
@@ -47,12 +48,13 @@ up³ywem czasu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}} \
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT%{_desktopdir}
 
 install neverball $RPM_BUILD_ROOT%{_bindir}
 cp -R data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/Makefile*
 
@@ -65,4 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 #%%attr(2755,root,games) %{_bindir}/neverball
 %attr(755,root,root) %{_bindir}/neverball
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/%{name}.desktop
+%{_pixmapsdir}/*.xpm
