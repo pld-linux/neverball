@@ -6,13 +6,13 @@
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
 Name:		neverball
-Version:	1.2.2
+Version:	1.2.4
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://icculus.org/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	d08817da57078b0fb8e5998fc45fc10a
+# Source0-md5:	c737250fec733c243355d6ac5e02f5b3
 Source1:	%{name}.desktop
 Patch0:		%{name}-home_etc-datadir.patch
 URL:		http://icculus.org/neverball/
@@ -61,7 +61,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README MAPPING CHANGES
+%doc README CHANGES
 #%%attr(2755,root,games) %{_bindir}/neverball
 %attr(755,root,root) %{_bindir}/neverball
 %{_datadir}/%{name}
