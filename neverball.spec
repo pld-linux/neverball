@@ -34,7 +34,7 @@ up³ywem czasu.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1 -R
+%patch0 -p1
 
 %build
 %{__make} \
