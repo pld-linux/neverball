@@ -6,4 +6,5 @@ Exec=neverball
 Terminal=0
 Type=Application
 Categories=Qt;KDE;Game;ArcadeGame
+Encoding=UTF-8
 # vi: encoding=utf-8
