@@ -1,0 +1,52 @@
+diff -urN neverball-1.1.0-orig/config.h neverball-1.1.0/config.h
+--- neverball-1.1.0-orig/config.h	2004-02-04 17:14:43.000000000 +0100
++++ neverball-1.1.0/config.h	2004-02-04 17:52:20.928763752 +0100
+@@ -5,6 +5,8 @@
+ 
+ #include "audio.h"
+ 
++#include <home_etc.h>
++
+ /*---------------------------------------------------------------------------*/
+ 
+ /*
+@@ -23,8 +25,8 @@
+  * directory as given by the HOME environment var.  If the config file
+  * is deleted, it will be recreated using the defaults.
+  */
+-#define USER_CONFIG_FILE ".neverballrc"
+-#define USER_REPLAY_FILE ".neverballrp"
++#define USER_CONFIG_FILE _HE(".neverballrc")
++#define USER_REPLAY_FILE _HE(".neverballrp")
+ 
+ #define CONFIG_DEF_WIDTH       800
+ #define CONFIG_DEF_HEIGHT      600
+diff -urN neverball-1.1.0-orig/Makefile neverball-1.1.0/Makefile
+--- neverball-1.1.0-orig/Makefile	2004-02-04 17:14:43.000000000 +0100
++++ neverball-1.1.0/Makefile	2004-02-04 17:55:03.317076976 +0100
+@@ -110,10 +110,10 @@
+ #------------------------------------------------------------------------------
+ 
+ %.d : %.c
+-	$(CC) $(CFLAGS) -MM -MF $@ $<
++	$(CC) $(CFLAGS) -lhome_etc -MM -MF $@ $<
+ 
+ %.o : %.c
+-	$(CC) $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -lhome_etc -c $<
+ 
+ data/sol-rlk/%.sol : data/map-rlk/%.map $(MAPC_TARG)
+ 	./$(MAPC_TARG) $< $@ data
+@@ -126,10 +126,10 @@
+ all : $(GAME_TARG) $(MAPC_TARG) $(SOLS)
+ 
+ $(GAME_TARG) : $(GAME_OBJS)
+-	$(CC) $(CFLAGS) -o $(GAME_TARG) $(GAME_OBJS) $(GAME_LIBS)
++	$(CC) $(CFLAGS) -lhome_etc -o $(GAME_TARG) $(GAME_OBJS) $(GAME_LIBS)
+ 
+ $(MAPC_TARG) : $(MAPC_OBJS)
+-	$(CC) $(CFLAGS) -o $(MAPC_TARG) $(MAPC_OBJS) $(MAPC_LIBS)
++	$(CC) $(CFLAGS) -lhome_etc -o $(MAPC_TARG) $(MAPC_OBJS) $(MAPC_LIBS)
+ 
+ clean :
+ 	rm -f $(GAME_TARG) $(GAME_OBJS) $(GAME_DEPS)
