@@ -76,5 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc README CHANGES
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
