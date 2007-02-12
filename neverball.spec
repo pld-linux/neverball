@@ -4,7 +4,7 @@
 #  - put highscores files in proper place
 #
 Summary:	Neverball - 3D game with rolling the ball
-Summary(pl):	Neverball - gra 3D polegaj±ca na toczeniu kulki
+Summary(pl.UTF-8):   Neverball - gra 3D polegajÄ…ca na toczeniu kulki
 Name:		neverball
 Version:	1.4.0
 Release:	1
@@ -37,14 +37,14 @@ entirely a test of skill.
 Also found here is Neverputt, a hot-seat multiplayer miniature golf
 game using the physics and graphics of Neverball.
 
-%description -l pl
-Gra polega na przechylaniu sto³u, aby przetoczyæ kulkê przez tor
-z przeszkodami przed up³ywem czasu. Neverball jest czê¶ciowo gr±
-logiczn±, czê¶ciowo zrêczno¶ciow± i w ca³o¶ci jest sprawdzianem
-umiejêtno¶ci.
+%description -l pl.UTF-8
+Gra polega na przechylaniu stoÅ‚u, aby przetoczyÄ‡ kulkÄ™ przez tor
+z przeszkodami przed upÅ‚ywem czasu. Neverball jest czÄ™Å›ciowo grÄ…
+logicznÄ…, czÄ™Å›ciowo zrÄ™cznoÅ›ciowÄ… i w caÅ‚oÅ›ci jest sprawdzianem
+umiejÄ™tnoÅ›ci.
 
-Za³±czony jest równie¿ Neverputt, miniaturowy golf dla wielu graczy
-siedz±cych przy jednym komputerze u¿ywaj±cy fizyki i grafiki
+ZaÅ‚Ä…czony jest rÃ³wnieÅ¼ Neverputt, miniaturowy golf dla wielu graczy
+siedzÄ…cych przy jednym komputerze uÅ¼ywajÄ…cy fizyki i grafiki
 Neverballa.
 
 %prep
