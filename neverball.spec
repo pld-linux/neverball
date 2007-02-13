@@ -4,7 +4,7 @@
 #  - put highscores files in proper place
 #
 Summary:	Neverball - 3D game with rolling the ball
-Summary(pl.UTF-8):   Neverball - gra 3D polegająca na toczeniu kulki
+Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
 Name:		neverball
 Version:	1.4.0
 Release:	1
