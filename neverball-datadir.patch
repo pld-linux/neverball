@@ -1,12 +1,16 @@
-diff -Nuard neverball-1.2.5-orig/share/config.h neverball-1.2.5/share/config.h
---- neverball-1.2.5-orig/share/config.h	2004-05-02 19:45:02.000000000 +0200
-+++ neverball-1.2.5/share/config.h	2004-05-03 17:32:07.712826888 +0200
-@@ -15,7 +15,7 @@
+--- neverball-1.5.0/share/base_config.h~	2009-01-29 23:39:11.000000000 +0100
++++ neverball-1.5.0/share/base_config.h	2009-02-06 11:52:51.000000000 +0100
+@@ -30,11 +30,11 @@
+ #endif
  
- /*---------------------------------------------------------------------------*/
+ #ifndef CONFIG_DATA
+-#define CONFIG_DATA   "./data"        /* Game data directory */
++#define CONFIG_DATA   "/usr/share/neverball"        /* Game data directory */
+ #endif
  
--#define CONFIG_DATA "./data"
-+#define CONFIG_DATA "/usr/share/neverball"
- #define CONFIG_USER ".neverball"
+ #ifndef CONFIG_LOCALE
+-#define CONFIG_LOCALE "./locale"      /* Game localisation */
++#define CONFIG_LOCALE "/usr/share/locale"      /* Game localisation */
+ #endif
  
- /*
+ /* User config directory */
