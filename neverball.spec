@@ -6,13 +6,13 @@
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
 Name:		neverball
-Version:	1.4.0
+Version:	1.5.0
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://icculus.org/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	2ea124706cf290027b44fc23f48f3096
+Source0:	http://icculus.org/neverball/%{name}-%{version}.tar.gz
+# Source0-md5:	c170b502e2c5507846e946cdddd8a0ad
 Source1:	%{name}.desktop
 Source2:	neverputt.desktop
 Source3:	%{name}.png
@@ -38,13 +38,13 @@ Also found here is Neverputt, a hot-seat multiplayer miniature golf
 game using the physics and graphics of Neverball.
 
 %description -l pl.UTF-8
-Gra polega na przechylaniu stołu, aby przetoczyć kulkę przez tor
-z przeszkodami przed upływem czasu. Neverball jest częściowo grą
-logiczną, częściowo zręcznościową i w całości jest sprawdzianem
-umiejętności.
+Gra polega na przechylaniu stołu, aby przetoczyć kulkę przez tor z
+przeszkodami przed upływem czasu. Neverball jest częściowo grą
+logiczną, częściowo zręcznościową i w całości jest
+sprawdzianem umiejętności.
 
-Załączony jest również Neverputt, miniaturowy golf dla wielu graczy
-siedzących przy jednym komputerze używający fizyki i grafiki
+Załączony jest również Neverputt, miniaturowy golf dla wielu
+graczy siedzących przy jednym komputerze używający fizyki i grafiki
 Neverballa.
 
 %prep
