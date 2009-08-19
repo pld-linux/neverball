@@ -2,17 +2,18 @@
 # TODO:
 #  - correct home_etc
 #  - put highscores files in proper place
+#  - fix problem with ttf font
 #
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
 Name:		neverball
-Version:	1.5.1
-Release:	1
+Version:	1.5.2
+Release:	0.1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://icculus.org/neverball/%{name}-%{version}.tar.gz
-# Source0-md5:	d58740e8a2808a41400191ab01b19ad4
+# Source0-md5:	d9105d6b1b524629d91ed7dca554c7c8
 Source1:	%{name}.desktop
 Source2:	neverputt.desktop
 Source3:	%{name}.png
