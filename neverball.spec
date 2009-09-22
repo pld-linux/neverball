@@ -2,22 +2,22 @@
 # TODO:
 #  - correct home_etc
 #  - put highscores files in proper place
-#  - fix problem with ttf font
 #
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
 Name:		neverball
-Version:	1.5.3
+Version:	1.5.4
 Release:	0.1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://icculus.org/neverball/%{name}-%{version}.tar.gz
-# Source0-md5:	e60039ba17a68f9b22b0d4d3c010b9df
+# Source0-md5:	c523b0f72c2035831310e821162f7bd7
 Source1:	%{name}.desktop
 Source2:	neverputt.desktop
 Source3:	%{name}.png
 Patch0:		%{name}-datadir.patch
+Patch1:		%{name}-font.patch
 URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_image-devel
@@ -51,6 +51,7 @@ Neverballa.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} \
