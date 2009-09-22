@@ -1,0 +1,10 @@
+--- neverball-1.5.4/share/base_config.c~	2009-09-20 12:06:00.000000000 +0200
++++ neverball-1.5.4/share/base_config.c	2009-09-22 11:31:32.000000000 +0200
+@@ -91,6 +91,7 @@
+     }
+ 
+     fs_add_path_with_archives(user);
++    fs_add_path_with_archives("/usr/share/neverball");
+ 
+     free((void *) user);
+ }
