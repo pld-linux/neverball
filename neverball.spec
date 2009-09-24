@@ -2,6 +2,7 @@
 # TODO:
 #  - correct home_etc
 #  - put highscores files in proper place
+#  - use our ttf fonts
 #
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
