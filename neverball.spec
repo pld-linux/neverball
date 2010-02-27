@@ -8,7 +8,7 @@ Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
 Name:		neverball
 Version:	1.5.4
-Release:	0.1
+Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Games
