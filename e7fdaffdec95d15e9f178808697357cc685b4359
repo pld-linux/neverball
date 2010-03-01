@@ -1,0 +1,3 @@
+- added patch0
+- rewriten %build, %install, %files
+- build and works fine
