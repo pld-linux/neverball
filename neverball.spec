@@ -21,12 +21,14 @@ Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-font.patch
 URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
-BuildRequires:	SDL_image-devel
-BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
+BuildRequires:	gettext-devel
 #BuildRequires:	guile-devel >= 1.6.3
 #BuildRequires:	home-etc-devel
-BuildRequires:	libstdc++-devel
+BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libvorbis-devel
+BuildRequires:	physfs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
@@ -42,11 +44,11 @@ game using the physics and graphics of Neverball.
 %description -l pl.UTF-8
 Gra polega na przechylaniu stołu, aby przetoczyć kulkę przez tor z
 przeszkodami przed upływem czasu. Neverball jest częściowo grą
-logiczną, częściowo zręcznościową i w całości jest
-sprawdzianem umiejętności.
+logiczną, częściowo zręcznościową i w całości jest sprawdzianem
+umiejętności.
 
-Załączony jest również Neverputt, miniaturowy golf dla wielu
-graczy siedzących przy jednym komputerze używający fizyki i grafiki
+Załączony jest również Neverputt, miniaturowy golf dla wielu graczy
+siedzących przy jednym komputerze używający fizyki i grafiki
 Neverballa.
 
 %prep
