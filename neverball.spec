@@ -1,5 +1,4 @@
 # TODO:
-#  - correct home_etc
 #  - put highscores files in proper place
 #    and that proper place is? -glen
 #
@@ -7,7 +6,7 @@ Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
 Name:		neverball
 Version:	1.5.4
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Games
@@ -24,7 +23,6 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	gettext-devel
 #BuildRequires:	guile-devel >= 1.6.3
-#BuildRequires:	home-etc-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libvorbis-devel
