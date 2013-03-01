@@ -1,9 +1,7 @@
-#
 # TODO:
 #  - correct home_etc
 #  - put highscores files in proper place
-#  - use our ttf fonts
-#    %{_datadir}/neverball/ttf/DejaVuSans-Bold.ttf
+#    and that proper place is? -glen
 #
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
@@ -31,6 +29,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	physfs-devel
+Requires:	fonts-TTF-DejaVu
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
@@ -73,6 +72,10 @@ install -p never{ball,putt} $RPM_BUILD_ROOT%{_bindir}
 cp -Rp data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -p %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 cp -p %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
+
+# Use system fonts instead of bundling our own
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/ttf/DejaVuSans-Bold.ttf
+ln -s %{_datadir}/fonts/TTF/DejaVuSans-Bold.ttf $RPM_BUILD_ROOT%{_datadir}/%{name}/ttf/DejaVuSans-Bold.ttf
 
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/Makefile*
 
