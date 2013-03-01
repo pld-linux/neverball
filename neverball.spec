@@ -3,6 +3,7 @@
 #  - correct home_etc
 #  - put highscores files in proper place
 #  - use our ttf fonts
+#    %{_datadir}/neverball/ttf/DejaVuSans-Bold.ttf
 #
 Summary:	Neverball - 3D game with rolling the ball
 Summary(pl.UTF-8):	Neverball - gra 3D polegająca na toczeniu kulki
@@ -19,6 +20,7 @@ Source2:	neverputt.desktop
 Source3:	%{name}.png
 Patch0:		%{name}-datadir.patch
 Patch1:		%{name}-font.patch
+Patch2:		dso.patch
 URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_ttf-devel
@@ -55,21 +57,22 @@ Neverballa.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p0
 
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -ansi `sdl-config --cflags`"
+	CFLAGS="%{rpmcflags} -ansi $(sdl-config --cflags)"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_pixmapsdir}} \
 	$RPM_BUILD_ROOT%{_desktopdir}
 
-install never{ball,putt} $RPM_BUILD_ROOT%{_bindir}
-cp -R data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
-install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
+install -p never{ball,putt} $RPM_BUILD_ROOT%{_bindir}
+cp -Rp data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -p %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
+cp -p %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 rm -f $RPM_BUILD_ROOT%{_datadir}/%{name}/Makefile*
 
@@ -79,7 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README CHANGES
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/neverball
+%attr(755,root,root) %{_bindir}/neverputt
 %{_datadir}/%{name}
-%{_desktopdir}/*.desktop
-%{_pixmapsdir}/*
+%{_desktopdir}/neverball.desktop
+%{_desktopdir}/neverputt.desktop
+%{_pixmapsdir}/neverball.png
