@@ -72,6 +72,8 @@ install -p never{ball,putt} $RPM_BUILD_ROOT%{_bindir}
 cp -Rp data/* $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -p %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 cp -p %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -p data/icon/neverball.png $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -p data/icon/neverputt.png $RPM_BUILD_ROOT%{_pixmapsdir}
 
 # Use system fonts instead of bundling our own
 %{__rm} $RPM_BUILD_ROOT%{_datadir}/%{name}/ttf/DejaVuSans-Bold.ttf
@@ -91,3 +93,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/neverball.desktop
 %{_desktopdir}/neverputt.desktop
 %{_pixmapsdir}/neverball.png
+%{_pixmapsdir}/neverputt.png
