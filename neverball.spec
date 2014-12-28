@@ -21,7 +21,7 @@ Patch2:		dso.patch
 URL:		http://icculus.org/neverball/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_ttf-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 #BuildRequires:	guile-devel >= 1.6.3
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
